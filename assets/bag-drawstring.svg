@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 440" width="400" height="440" fill="none">
+  <defs>
+    <filter id="shadowds" x="-8%" y="-8%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadowds)">
+    <!-- Drawstring Cords -->
+    <path d="M100 130 C40 220 50 360 90 395" stroke="#0f172a" stroke-width="6" fill="none"/>
+    <path d="M300 130 C360 220 350 360 310 395" stroke="#0f172a" stroke-width="6" fill="none"/>
+    <!-- Cinch Gathering Top -->
+    <path d="M100 130 C150 145 250 145 300 130 C270 120 130 120 100 130 Z" fill="#dc2626"/>
+    <!-- Main Sack Body -->
+    <path d="M100 130 L300 130 L315 395 C315 405 305 410 295 410 L105 410 C95 410 85 405 85 395 Z" fill="#ef4444"/>
+    <!-- Reinforced Corners with metal grommets -->
+    <polygon points="85,360 85,410 135,410" fill="#0f172a"/>
+    <circle cx="102" cy="395" r="5" fill="#94a3b8"/>
+    <polygon points="315,360 315,410 265,410" fill="#0f172a"/>
+    <circle cx="298" cy="395" r="5" fill="#94a3b8"/>
+    <!-- Mockup Screen Print -->
+    <circle cx="200" cy="260" r="30" fill="#ffffff" fill-opacity="0.9"/>
+    <polygon points="190,250 215,260 190,270" fill="#ef4444"/>
+    <text x="200" y="315" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">5K MARATHON</text>
+  </g>
+</svg>

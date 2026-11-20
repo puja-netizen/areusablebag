@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Reusable Bag | Custom Printed Reusable Shopping Bags &amp; Wholesale Grocery Totes</title>
+  <meta name="description" content="Factory direct custom printed reusable bags, grocery totes, non-woven polypropylene bags, insulated coolers &amp; wine totes. Wholesale pricing and free physical samples.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <style>
+    .cat-tiles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .cat-tile {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+    }
+    .cat-tile:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary);
+    }
+    .cat-tile-img {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      background: var(--surface-alt);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+    }
+    .cat-tile-img img {
+      max-height: 160px;
+      max-width: 100%;
+      object-fit: contain;
+    }
+    .cat-tile h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 0.5rem;
+    }
+    .cat-tile p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-pill">
+            <span>✨ Authentic Factory Direct Wholesale</span>
+            <span>•</span>
+            <span>Free Sample Kits</span>
+          </div>
+          <h1 class="hero-title">Custom Printed Reusable Bags for Retail, Grocers &amp; Brands.</h1>
+          <p class="hero-subtitle">
+            Durable non-woven grocery totes, RPET recycled shoppers, and thermal coolers built for heavy supermarket loads. Customized with your logo via crisp spot screen printing or full-color Color Evolution digital heat transfer.
+          </p>
+          <div class="hero-actions">
+            <a href="catalog.html" class="btn btn-primary btn-lg">Browse Wholesale Catalog (318 Bags) →</a>
+            <button class="btn btn-outline btn-lg open-sample-modal-btn" style="color:#ffffff; border-color:rgba(255,255,255,0.4); background:transparent;">Request Free Sample Kit</button>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h4>5 Days</h4>
+              <p>Standard Rush Production</p>
+            </div>
+            <div class="stat-item">
+              <h4>100%</h4>
+              <p>Recyclable Polypropylene #5</p>
+            </div>
+            <div class="stat-item">
+              <h4>318</h4>
+              <p>Authentic Wholesale Models</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Showcase Card with Real Bag -->
+        <div class="hero-card">
+          <div class="hero-card-tag">⭐ #1 SUPERMARKET CHOICE</div>
+          <h2 class="hero-card-title">Heavy Duty Non-Woven Grocery Tote</h2>
+          <p style="font-size:0.8125rem; color:#d4d4d4; margin-bottom:1rem;">With Poly Board Bottom Insert &amp; Reinforced Handles</p>
+          <div class="hero-bag-display">
+            <img src="assets/products/2023_11_HEAVY-DUTY-NON-WOVEN-GROCERY-TOTE-BAG-WITH-POLY-BOARD-INSERT.jpg" alt="Heavy Duty Grocery Tote" style="max-height:280px; margin:0 auto; object-fit:contain;" onerror="this.src='assets/logo.png'">
+          </div>
+          <div style="font-size:1.15rem; font-weight:800; color:var(--primary); margin-bottom:1rem;">
+            From $3.45 <span style="font-size:0.75rem; color:#a3a3a3; font-weight:500;">wholesale</span>
+          </div>
+          <div style="display:flex; justify-content:center; gap:0.75rem;">
+            <a href="product-detail.html?slug=heavy-duty-non-woven-grocery-tote-bag-with-poly-board-insert" class="btn btn-primary btn-sm">Configure This Bag</a>
+            <button class="btn btn-outline btn-sm open-sample-modal-btn" style="color:#ffffff; border-color:rgba(255,255,255,0.3); background:transparent;" onclick="App.addSample('heavy-duty-non-woven-grocery-tote-bag-with-poly-board-insert')">+ Free Sample</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust & Quality Bar -->
+    <section class="trust-bar" aria-label="Wholesale Guarantees">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon">♻️</div>
+          <div>
+            <h4>100% Recyclable Material</h4>
+            <p>Certified Non-Woven Polypropylene (#5) &amp; RPET</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">⚡</div>
+          <div>
+            <h4>Fast 5-Day Turnaround</h4>
+            <p>Expedited rush production available on wholesale runs</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🎨</div>
+          <div>
+            <h4>Free Art Virtual Proofs</h4>
+            <p>Visual digital mockups before printing commences</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🏭</div>
+          <div>
+            <h4>Factory-Direct Pricing</h4>
+            <p>Direct wholesale manufacturer. No middleman markup</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 Category Tiles Section matching Original Site -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-pill">Wholesale Collections</span>
+          <h2 class="section-title">Explore Our 7 Core Bag Categories</h2>
+          <p class="section-desc">From everyday supermarket shoppers to heavy thermal coolers, each line is engineered for high durability, sharp custom printing, and retail compliance.</p>
+        </div>
+
+        <div class="cat-tiles-grid">
+          <!-- 1. Printed Bags -->
+          <div class="cat-tile">
+            <div>
+              <div class="cat-tile-img">
+                <img src="assets/products/2023_11_HEAVY-DUTY-NON-WOVEN-GROCERY-TOTE-BAG-WITH-POLY-BOARD-INSERT.jpg" alt="Printed Bags" onerror="this.src='assets/logo.png'">
+              </div>
+              <h3>Printed Bags</h3>
+              <p>Custom logo printed totes engineered with bold 1-color screen printing or full color digital heat transfers.</p>
+            </div>
+            <a href="catalog.html?category=TOTES" class="btn btn-outline btn-sm" style="width:100%; font-weight:700;">View Printed Bags →</a>
+          </div>
+
+          <!-- 2. Polypropylene Non-Woven -->
+          <div class="cat-tile">
+            <div>
+              <div class="cat-tile-img">
+                <img src="assets/products/2023_11_RECESSION-BUSTER-NON-WOVEN-GROCERY-TOTE-BAG-WITH-POLY-BOARD-INSERT.jpg" alt="Polypropylene Non-Woven Bags" onerror="this.src='assets/logo.png'">
+              </div>
+              <h3>Polypropylene Non-Woven</h3>
+              <p>Thick 80 GSM to 120 GSM recyclable non-woven grocery shoppers with reinforced handles and bottom inserts.</p>
+            </div>
+            <a href="catalog.html?category=GROCERY%20TOTES" class="btn btn-outline btn-sm" style="width:100%; font-weight:700;">View Polypropylene Bags →</a>
+          </div>
+
+          <!-- 3. RPET -->
+          <div class="cat-tile">
+            <div>
+              <div class="cat-tile-img">
+                <img src="assets/products/2023_11_Group-5320.jpg" alt="RPET Recycled Bags" onerror="this.src='assets/logo.png'">
+              </div>
+              <h3>RPET Recycled Bags</h3>
+              <p>Eco-conscious laminated and non-laminated shopping totes crafted from 100% post-consumer recycled plastic bottles.</p>
+            </div>
+            <a href="catalog.html?category=P.E.T%20%26%20R-P.E.T%20Bags" class="btn btn-outline btn-sm" style="width:100%; font-weight:700;">View RPET Bags →</a>
+          </div>
+
+          <!-- 4. Insulated Cooler -->
+          <div class="cat-tile">
+            <div>
+              <div class="cat-tile-img">
+                <img src="assets/products/2023_11_INSULATED-NON-WOVEN-GROCERY-TOTE-BAG-AND-POLY-BOARD-INSERT.jpg" alt="Insulated Cooler Bags" onerror="this.src='assets/logo.png'">
+              </div>
+              <h3>Insulated Cooler</h3>
+              <p>Thermal foil lined bags with heavy-duty zipper tops designed for refrigerated grocery items and meal delivery.</p>
+            </div>
+            <a href="catalog.html?category=INSULATED" class="btn btn-outline btn-sm" style="width:100%; font-weight:700;">View Insulated Bags →</a>
+          </div>
+
+          <!-- 5. Wine Totes -->
+          <div class="cat-tile">
+            <div>
+              <div class="cat-tile-img">
+                <img src="assets/products/2023_11_Group-5319-1.jpg" alt="Wine Totes" onerror="this.src='assets/logo.png'">
+              </div>
+              <h3>Wine Totes</h3>
+              <p>Single bottle, 2-bottle, 4-bottle, and 6-bottle carriers with padded dividers for wineries, breweries, and retail.</p>
+            </div>
+            <a href="catalog.html?category=WINE" class="btn btn-outline btn-sm" style="width:100%; font-weight:700;">View Wine Totes →</a>
+          </div>
+
+          <!-- 6. Cotton Totes -->
+          <div class="cat-tile">
+            <div>
+              <div class="cat-tile-img">
+                <img src="assets/products/2023_11_40AUNA1313_14_5_1_500px.jpg" alt="Cotton & Jute Totes" onerror="this.src='assets/logo.png'">
+              </div>
+              <h3>Cotton Totes</h3>
+              <p>100% natural organic cotton canvas and jute fiber totes offering an organic, natural aesthetic for premium boutiques.</p>
+            </div>
+            <a href="catalog.html?category=COTTON%2FJUTE" class="btn btn-outline btn-sm" style="width:100%; font-weight:700;">View Cotton Totes →</a>
+          </div>
+
+          <!-- 7. Sublimated PET -->
+          <div class="cat-tile">
+            <div>
+              <div class="cat-tile-img">
+                <img src="assets/products/2023_11_Group-5320.jpg" alt="Sublimated PET Bags" onerror="this.src='assets/logo.png'">
+              </div>
+              <h3>Sublimated PET</h3>
+              <p>Edge-to-edge full bleed photographic digital sublimation transfer on smooth laminated PET substrates.</p>
+            </div>
+            <a href="catalog.html?category=P.E.T%20%26%20R-P.E.T%20Bags" class="btn btn-outline btn-sm" style="width:100%; font-weight:700;">View Sublimated Bags →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Custom Bags using Real CSV Products -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-pill">Trending Now</span>
+          <h2 class="section-title">Trending Wholesale Custom Bags</h2>
+          <p class="section-desc">Our most popular direct-from-factory models with real wholesale catalog pricing.</p>
+        </div>
+
+        <div class="product-grid" id="homepage-trending-grid">
+          <!-- Dynamically populated from real PRODUCTS_DATA below -->
+        </div>
+
+        <div class="text-center" style="margin-top:2.5rem;">
+          <a href="catalog.html" class="btn btn-primary btn-lg">View All 318 Catalog Bags →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-pill">Verified Client Reviews</span>
+          <h2 class="section-title">Trusted by Independent Grocers, Supermarkets &amp; Retailers</h2>
+          <p class="section-desc">Over 2 million reusable totes delivered to grocery chains, event sponsors, and eco-conscious retailers.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.75rem;">
+          <div style="background:var(--surface); padding:2rem; border-radius:var(--radius-md); border:1px solid var(--border); box-shadow:var(--shadow-sm);">
+            <div style="color:var(--primary); font-size:1.1rem; margin-bottom:0.75rem;">★★★★★</div>
+            <p style="font-size:0.9375rem; color:var(--text-main); font-style:italic; margin-bottom:1.25rem; line-height:1.6;">
+              "We ordered 5,000 Heavy Duty Y2K grocery bags for our multi-location grocery co-op. The non-woven fabric and poly-board insert hold up to heavy cans without tearing, and our logo came out crisp."
+            </p>
+            <div style="font-weight:700; font-size:0.875rem;">Marcus Vance</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Director of Operations, Valley Farm Markets</div>
+          </div>
+
+          <div style="background:var(--surface); padding:2rem; border-radius:var(--radius-md); border:1px solid var(--border); box-shadow:var(--shadow-sm);">
+            <div style="color:var(--primary); font-size:1.1rem; margin-bottom:0.75rem;">★★★★★</div>
+            <p style="font-size:0.9375rem; color:var(--text-main); font-style:italic; margin-bottom:1.25rem; line-height:1.6;">
+              "The Color Evolution digital print on our insulated cooler bags looked like a high-res photograph. Turnaround was fast, and the sample kit helped us choose the right size before ordering."
+            </p>
+            <div style="font-weight:700; font-size:0.875rem;">Elena Rostova</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Merchandise Buyer, Pacific Provisions</div>
+          </div>
+
+          <div style="background:var(--surface); padding:2rem; border-radius:var(--radius-md); border:1px solid var(--border); box-shadow:var(--shadow-sm);">
+            <div style="color:var(--primary); font-size:1.1rem; margin-bottom:0.75rem;">★★★★★</div>
+            <p style="font-size:0.9375rem; color:var(--text-main); font-style:italic; margin-bottom:1.25rem; line-height:1.6;">
+              "Factory direct pricing with no distributor markup made our winery 4-bottle tote program profitable immediately. Customers buy them for $4 at the checkout counter and reuse them every weekend."
+            </p>
+            <div style="font-weight:700; font-size:0.875rem;">David Cho</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">General Manager, Sonoma Valley Cellars</div>
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top:2rem;">
+          <a href="reviews.html" class="btn btn-outline btn-sm">Read More Verified Client Reviews →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Preview Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-pill">Industry Insights</span>
+          <h2 class="section-title">Latest From Our Eco Packaging Blog</h2>
+          <p class="section-desc">Stay informed on municipal plastic bag bans, sustainability standards, and wholesale packaging trends.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem;">
+          <article style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm);">
+            <div style="padding:1.5rem;">
+              <span style="font-size:0.75rem; font-weight:700; color:var(--primary); text-transform:uppercase;">Regulation Guide</span>
+              <h3 style="font-size:1.2rem; font-weight:800; margin:0.5rem 0; line-height:1.4;">
+                <a href="blog.html#post-1">State &amp; Municipal Plastic Bag Ban Guide: Staying Compliant</a>
+              </h3>
+              <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+                Understand GSM thickness thresholds, recyclability disclosures, and minimum reuse certifications for retail grocery compliance across the US.
+              </p>
+              <a href="blog.html#post-1" style="font-weight:700; font-size:0.875rem; color:var(--primary);">Read Full Article →</a>
+            </div>
+          </article>
+
+          <article style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm);">
+            <div style="padding:1.5rem;">
+              <span style="font-size:0.75rem; font-weight:700; color:var(--primary); text-transform:uppercase;">Technical Guide</span>
+              <h3 style="font-size:1.2rem; font-weight:800; margin:0.5rem 0; line-height:1.4;">
+                <a href="blog.html#post-2">Screen Printing vs. Color Evolution: Which Imprint Method Is Right?</a>
+              </h3>
+              <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+                A comprehensive comparison between spot Pantone screen printing and high-resolution CMYK digital heat transfer for custom totes.
+              </p>
+              <a href="blog.html#post-2" style="font-weight:700; font-size:0.875rem; color:var(--primary);">Read Full Article →</a>
+            </div>
+          </article>
+
+          <article style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm);">
+            <div style="padding:1.5rem;">
+              <span style="font-size:0.75rem; font-weight:700; color:var(--primary); text-transform:uppercase;">Materials Science</span>
+              <h3 style="font-size:1.2rem; font-weight:800; margin:0.5rem 0; line-height:1.4;">
+                <a href="blog.html#post-3">Why Polypropylene #5 Remains the Gold Standard for Grocery Totes</a>
+              </h3>
+              <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+                From carbon footprint analysis to life-cycle durability, explore why non-woven polypropylene #5 outperforms paper and woven fabrics.
+              </p>
+              <a href="blog.html#post-3" style="font-weight:700; font-size:0.875rem; color:var(--primary);">Read Full Article →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Quote CTA Section -->
+    <section class="section" style="background:#000000; color:#ffffff; padding:4rem 0;">
+      <div class="container text-center" style="max-width:760px;">
+        <span class="section-pill">Wholesale Sourcing</span>
+        <h2 style="font-size:2.25rem; font-weight:800; margin-bottom:1rem; color:#ffffff;">Ready for Custom Printed Reusable Bags?</h2>
+        <p style="font-size:1.0625rem; color:#d4d4d4; margin-bottom:2rem; line-height:1.6;">
+          Receive an instant wholesale volume quote with free digital artwork proofs, or order up to 2 free physical samples shipped directly to your business.
+        </p>
+        <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+          <a href="quote.html" class="btn btn-primary btn-lg">Request a Custom Quote →</a>
+          <button class="btn btn-outline btn-lg open-sample-modal-btn" style="color:#ffffff; border-color:rgba(255,255,255,0.4); background:transparent;">Order Free Sample</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Free Sample Kit Drawer Backdrop & Modal -->
+  <div class="modal-backdrop" id="sample-modal-backdrop">
+    <div class="modal-box" style="max-width:540px;">
+      <div class="modal-header">
+        <h3 style="font-size:1.25rem; font-weight:800;">Your Free Sample Kit</h3>
+        <button class="modal-close" id="close-sample-modal-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="sample-modal-list" style="margin-bottom:1.5rem;"></div>
+        <form id="sample-request-form" onsubmit="App.handleSampleFormSubmit(event)">
+          <div class="form-group">
+            <label class="form-label" for="sample-company">Company / Organization Name *</label>
+            <input type="text" id="sample-company" name="company" class="form-input" required placeholder="e.g. Acme Supermarkets">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="sample-name">Contact Name *</label>
+            <input type="text" id="sample-name" name="name" class="form-input" required placeholder="Jane Doe">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="sample-email">Business Email *</label>
+            <input type="email" id="sample-email" name="email" class="form-input" required placeholder="jane@company.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="sample-address">Commercial Shipping Address *</label>
+            <textarea id="sample-address" name="address" class="form-textarea" rows="2" required placeholder="Street address, Suite, City, State, ZIP"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; font-weight:700;">Submit Free Sample Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Standard Footer -->
+    <!-- Shared Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <script src="js/layout.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Render Trending Real Products on Homepage
+    document.addEventListener('DOMContentLoaded', () => {
+      const trendingGrid = document.getElementById('homepage-trending-grid');
+      if (trendingGrid && typeof PRODUCTS_DATA !== 'undefined') {
+        // Select 6 popular products with images and prices
+        const trendingItems = PRODUCTS_DATA.filter(p => p.image && p.displayPrice).slice(0, 6);
+        let html = '';
+        trendingItems.forEach(product => {
+          const cat = product.categories[0] || 'Wholesale Bag';
+          html += `
+            <div class="product-card">
+              <div class="product-badge-wrap">
+                <span class="badge badge-dark">SKU: ${product.sku}</span>
+              </div>
+              <a href="product-detail.html?slug=${product.slug}" class="product-img-wrap" aria-label="${product.name}">
+                <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.onerror=null; this.src='assets/logo.png';">
+              </a>
+              <div class="product-content">
+                <div class="product-category-tag">${cat}</div>
+                <h3 class="product-title">
+                  <a href="product-detail.html?slug=${product.slug}">${product.name}</a>
+                </h3>
+                <div class="product-pricing-box">
+                  <div>
+                    <div class="price-unit">Wholesale Tier Rate</div>
+                    <div class="price-val">${product.displayPrice} <span style="font-size:0.75rem; font-weight:500; color:var(--text-muted);">wholesale</span></div>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <a href="product-detail.html?slug=${product.slug}" class="btn btn-primary btn-sm">View Details</a>
+                  <button class="btn btn-outline btn-sm" onclick="App.addSample('${product.slug}')">+ Free Sample</button>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+        trendingGrid.innerHTML = html;
+      }
+    });
+  </script>
+</body>
+</html>

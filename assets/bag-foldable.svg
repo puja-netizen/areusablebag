@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 440" width="400" height="440" fill="none">
+  <defs>
+    <filter id="shadowf" x="-8%" y="-8%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadowf)">
+    <!-- Wide Shoulder Handles -->
+    <path d="M120 130 C120 40 180 40 180 130" stroke="#0284c7" stroke-width="22" stroke-linecap="round" fill="none"/>
+    <path d="M220 130 C220 40 280 40 280 130" stroke="#0284c7" stroke-width="22" stroke-linecap="round" fill="none"/>
+    <!-- Lightweight Ripstop Bag Body -->
+    <path d="M90 130 L310 130 L300 405 C300 412 290 415 280 415 L120 415 C110 415 100 412 100 405 Z" fill="#38bdf8"/>
+    <!-- Ripstop subtle grid -->
+    <path d="M100 200 H300 M100 270 H300 M100 340 H300" stroke="#ffffff" stroke-width="1" stroke-opacity="0.3"/>
+    <!-- Folded pouch insert attached -->
+    <g transform="translate(160, 240)">
+      <rect x="0" y="0" width="80" height="70" rx="8" fill="#0284c7" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="40" cy="20" r="4" fill="#f8fafc"/>
+      <path d="M40 38 L30 48 H50 Z" fill="#ffffff"/>
+      <text x="40" y="60" font-family="system-ui, sans-serif" font-size="8" font-weight="700" fill="#ffffff" text-anchor="middle">PACK-N-GO</text>
+    </g>
+  </g>
+</svg>

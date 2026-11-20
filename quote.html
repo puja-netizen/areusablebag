@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Wholesale Quote (RFQ) | A Reusable Bag</title>
+  <meta name="description" content="Submit a Request for Quote (RFQ) for custom printed reusable shopping bags. Get instant factory pricing, free artwork digital proofing, and volume discounts.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+</head>
+<body>
+
+  <!-- Shared Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main style="padding: 3rem 0 5rem 0;">
+    <div class="container">
+      
+      <div class="section-header text-center" style="max-width:700px; margin:0 auto 3rem auto;">
+        <span class="section-pill">Wholesale RFQ</span>
+        <h1 class="section-title">Request an Official Wholesale Quote</h1>
+        <p class="section-desc">
+          Fill in your project details below to receive a formal factory pricing quotation, freight schedule, and free digital art proof within 2 business hours.
+        </p>
+      </div>
+
+      <div class="quote-page-grid">
+        
+        <!-- Left: RFQ Form Column -->
+        <div class="quote-form-col">
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:2rem; box-shadow:var(--shadow-md); width:100%; box-sizing:border-box;" id="rfq-form-card">
+          <form id="quote-rfq-form" onsubmit="handleRfqSubmit(event)">
+            
+            <!-- Step 1: Bag Selection -->
+            <div style="margin-bottom:2rem; padding-bottom:1.5rem; border-bottom:1px solid var(--border);">
+              <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem; color:#000000;">
+                <span style="width:26px; height:26px; border-radius:50%; background:var(--primary); color:#ffffff; font-size:0.8125rem; display:flex; align-items:center; justify-content:center;">1</span>
+                Bag Model &amp; Quantity
+              </h3>
+
+              <div class="form-group">
+                <label class="form-label" for="rfq-bag-select">Select Bag Style *</label>
+                <select id="rfq-bag-select" name="bag_style" class="form-select" required onchange="updateRfqDetails()" style="max-width:100%; min-width:0; width:100%;">
+                  <!-- Dynamically populated with all CSV products -->
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="rfq-quantity-input">Quantity (Units) *</label>
+                  <input type="number" id="rfq-quantity-input" name="quantity" class="form-input" min="100" step="50" value="500" required oninput="updateRfqDetails()">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="rfq-color-select">Color / Variant</label>
+                  <select id="rfq-color-select" name="bag_color" class="form-select" onchange="updateRfqDetails()" style="max-width:100%; min-width:0; width:100%;">
+                    <!-- Options populated from variations -->
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Custom Printing Options -->
+            <div style="margin-bottom:2rem; padding-bottom:1.5rem; border-bottom:1px solid var(--border);">
+              <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem; color:#000000;">
+                <span style="width:26px; height:26px; border-radius:50%; background:var(--primary); color:#ffffff; font-size:0.8125rem; display:flex; align-items:center; justify-content:center;">2</span>
+                Imprint Method &amp; Locations
+              </h3>
+
+              <div class="form-row" style="margin-bottom:1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="rfq-method-select">Printing Method</label>
+                  <select id="rfq-method-select" name="print_method" class="form-select" onchange="updateRfqDetails()" style="max-width:100%; min-width:0; width:100%;">
+                    <option value="screen1">1-Color Spot Screen Print (Standard)</option>
+                    <option value="screen2">2-Color Spot Screen Print</option>
+                    <option value="fullColor">Color Evolution (Full Color CMYK Transfer)</option>
+                    <option value="blank">Blank / Unprinted Bags</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="rfq-sides-select">Imprint Locations</label>
+                  <select id="rfq-sides-select" name="print_sides" class="form-select" onchange="updateRfqDetails()" style="max-width:100%; min-width:0; width:100%;">
+                    <option value="1">1 Side Only (Front)</option>
+                    <option value="2">2 Sides (Front &amp; Back)</option>
+                    <option value="gusset">Front + Side Gussets</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Vector Artwork Upload -->
+              <div class="form-group">
+                <label class="form-label">Upload Artwork Mockup / Logo (Optional)</label>
+                <div style="border:2px dashed var(--border); border-radius:var(--radius-md); padding:1.5rem; text-align:center; background:var(--surface-alt);">
+                  <div style="font-size:1.5rem; margin-bottom:0.25rem;">📁</div>
+                  <div style="font-size:0.875rem; font-weight:600; margin-bottom:0.25rem;">Drag &amp; drop artwork file, or click to browse</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:0.75rem;">Accepts vector PDF, AI, EPS, SVG, or high-res PNG / JPG</div>
+                  <input type="file" id="rfq-file-upload" name="artwork_file" style="display:none;" onchange="handleFileSelect(event)">
+                  <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('rfq-file-upload').click()">Choose File</button>
+                  <div id="rfq-selected-filename" style="margin-top:0.5rem; font-size:0.8125rem; font-weight:600; color:var(--primary); display:none;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Contact & Delivery Info -->
+            <div style="margin-bottom:2rem;">
+              <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem; color:#000000;">
+                <span style="width:26px; height:26px; border-radius:50%; background:var(--primary); color:#ffffff; font-size:0.8125rem; display:flex; align-items:center; justify-content:center;">3</span>
+                Organization &amp; Shipping Details
+              </h3>
+
+              <div class="form-row" style="margin-bottom:1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="rfq-company">Company / Organization *</label>
+                  <input type="text" id="rfq-company" name="company" class="form-input" required placeholder="e.g. Metro Grocers">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="rfq-name">Contact Name *</label>
+                  <input type="text" id="rfq-name" name="name" class="form-input" required placeholder="Jane Doe">
+                </div>
+              </div>
+
+              <div class="form-row" style="margin-bottom:1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="rfq-email">Business Email *</label>
+                  <input type="email" id="rfq-email" name="email" class="form-input" required placeholder="jane@metrogrocers.com">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="rfq-phone">Phone Number *</label>
+                  <input type="tel" id="rfq-phone" name="phone" class="form-input" required placeholder="(555) 000-0000">
+                </div>
+              </div>
+
+              <div class="form-row" style="margin-bottom:1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="rfq-zip">Delivery ZIP Code *</label>
+                  <input type="text" id="rfq-zip" name="zip" class="form-input" required placeholder="90210">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="rfq-date">Target In-Hands Date</label>
+                  <input type="date" id="rfq-date" name="target_date" class="form-input">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="rfq-notes">Special Instructions or Notes</label>
+                <textarea id="rfq-notes" name="notes" class="form-textarea" rows="3" placeholder="Tell us about PMS color matches, multi-location delivery drops, or specific packaging requirements."></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%; font-weight:800; font-size:1.0625rem;">
+              Submit Official Wholesale Quote Request →
+            </button>
+            <p style="text-align:center; font-size:0.75rem; color:var(--text-muted); margin-top:0.75rem;">
+              🔒 Strictly confidential. No spam. Official factory pricing delivered within 2 hours.
+            </p>
+          </form>
+        </div>
+        </div>
+
+        <!-- Right: Live Quote Summary Panel -->
+        <div class="quote-sticky-panel">
+          <div style="background:#000000; color:#ffffff; border-radius:var(--radius-lg); padding:2rem; box-shadow:var(--shadow-xl);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem; border-bottom:1px solid #333333; padding-bottom:1rem;">
+              <h3 style="font-size:1.25rem; font-weight:800; color:#ffffff;">Quote Estimate</h3>
+              <span class="badge" style="background:var(--primary); color:#ffffff;">Factory Direct</span>
+            </div>
+
+            <!-- Selected Bag Card -->
+            <div style="display:flex; gap:1rem; align-items:center; background:#171717; border-radius:var(--radius-md); padding:1rem; margin-bottom:1.5rem;">
+              <div style="width:64px; height:64px; background:#ffffff; border-radius:var(--radius-sm); padding:4px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <img id="rfq-preview-img" src="assets/logo.png" alt="Bag Preview" style="max-height:100%; max-width:100%; object-fit:contain;">
+              </div>
+              <div style="overflow:hidden;">
+                <h4 id="rfq-preview-name" style="font-size:0.95rem; font-weight:700; color:#ffffff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
+                  Select a Bag
+                </h4>
+                <div id="rfq-preview-sku" style="font-size:0.75rem; color:#a3a3a3;">SKU: --</div>
+              </div>
+            </div>
+
+            <!-- Breakdown -->
+            <div style="display:flex; flex-direction:column; gap:0.75rem; font-size:0.875rem; margin-bottom:1.5rem; border-bottom:1px solid #333333; padding-bottom:1.25rem;">
+              <div style="display:flex; justify-content:space-between; color:#a3a3a3;">
+                <span>Requested Quantity</span>
+                <strong id="rfq-disp-qty" style="color:#ffffff;">500 units</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; color:#a3a3a3;">
+                <span>Wholesale Base Rate</span>
+                <strong id="rfq-disp-unit-rate" style="color:#ffffff;">$3.45 /bag</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; color:#a3a3a3;">
+                <span>Imprint Setup Fee</span>
+                <strong id="rfq-disp-setup" style="color:var(--primary);">FREE ($0)</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; color:#a3a3a3;">
+                <span>Standard Production</span>
+                <strong id="rfq-disp-turnaround" style="color:#ffffff;">5-10 Business Days</strong>
+              </div>
+            </div>
+
+            <!-- Total -->
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:1.5rem;">
+              <span style="font-size:1.1rem; font-weight:700; color:#ffffff;">Estimated Subtotal</span>
+              <span id="rfq-disp-total" style="font-size:1.75rem; font-weight:800; color:var(--primary);">$1,725.00</span>
+            </div>
+
+            <div style="background:#171717; border-radius:var(--radius-sm); padding:0.85rem; font-size:0.75rem; color:#a3a3a3; line-height:1.5;">
+              ℹ️ Freight is calculated based on destination ZIP code. Formal PDF quote includes shipping options and complimentary digital art mockups.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Free Sample Kit Drawer Backdrop & Modal -->
+  <div class="modal-backdrop" id="sample-modal-backdrop">
+    <div class="modal-box" style="max-width:540px;">
+      <div class="modal-header">
+        <h3 style="font-size:1.25rem; font-weight:800;">Your Free Sample Kit</h3>
+        <button class="modal-close" id="close-sample-modal-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="sample-modal-list" style="margin-bottom:1.5rem;"></div>
+        <form id="sample-request-form" onsubmit="App.handleSampleFormSubmit(event)">
+          <div class="form-group">
+            <label class="form-label" for="sample-company">Company / Organization Name *</label>
+            <input type="text" id="sample-company" name="company" class="form-input" required placeholder="e.g. Acme Supermarkets">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="sample-name">Contact Name *</label>
+            <input type="text" id="sample-name" name="name" class="form-input" required placeholder="Jane Doe">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="sample-email">Business Email *</label>
+            <input type="email" id="sample-email" name="email" class="form-input" required placeholder="jane@company.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="sample-address">Commercial Shipping Address *</label>
+            <textarea id="sample-address" name="address" class="form-textarea" rows="2" required placeholder="Street address, Suite, City, State, ZIP"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; font-weight:700;">Submit Free Sample Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Standard Footer -->
+    <!-- Shared Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <script src="js/layout.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    let currentSelectedProduct = null;
+
+    function initRfqPage() {
+      if (typeof PRODUCTS_DATA === 'undefined') return;
+
+      const bagSelect = document.getElementById('rfq-bag-select');
+      if (!bagSelect) return;
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const preProductSlug = urlParams.get('product') || urlParams.get('id');
+
+      let optionsHtml = '';
+      PRODUCTS_DATA.forEach(p => {
+        const isSelected = preProductSlug && (p.slug === preProductSlug || p.id === preProductSlug || p.sku === preProductSlug);
+        optionsHtml += `<option value="${p.slug}" ${isSelected ? 'selected' : ''}>${p.name} (SKU: ${p.sku})</option>`;
+      });
+      bagSelect.innerHTML = optionsHtml;
+
+      updateRfqDetails();
+    }
+
+    function updateRfqDetails() {
+      const bagSelect = document.getElementById('rfq-bag-select');
+      const qtyInput = document.getElementById('rfq-quantity-input');
+      const colorSelect = document.getElementById('rfq-color-select');
+      if (!bagSelect || typeof PRODUCTS_DATA === 'undefined') return;
+
+      currentSelectedProduct = PRODUCTS_DATA.find(p => p.slug === bagSelect.value) || PRODUCTS_DATA[0];
+      if (!currentSelectedProduct) return;
+
+      // Update variant options if changed
+      if (colorSelect && colorSelect.dataset.productSlug !== currentSelectedProduct.slug) {
+        colorSelect.dataset.productSlug = currentSelectedProduct.slug;
+        const vars = currentSelectedProduct.variations || [];
+        if (vars.length > 0) {
+          colorSelect.innerHTML = vars.map(v => {
+            const attrVal = (v.attributes && v.attributes[0]) ? v.attributes[0].value : v.name;
+            return `<option value="${attrVal}">${attrVal}</option>`;
+          }).join('');
+        } else {
+          colorSelect.innerHTML = '<option value="Standard Stock">Standard Stock</option>';
+        }
+      }
+
+      const qty = parseInt(qtyInput ? qtyInput.value : 500) || 500;
+      const unitPrice = currentSelectedProduct.price !== null ? currentSelectedProduct.price : 2.50;
+      const subtotal = unitPrice * qty;
+
+      // Update UI preview
+      const previewImg = document.getElementById('rfq-preview-img');
+      const previewName = document.getElementById('rfq-preview-name');
+      const previewSku = document.getElementById('rfq-preview-sku');
+      const dispQty = document.getElementById('rfq-disp-qty');
+      const dispRate = document.getElementById('rfq-disp-unit-rate');
+      const dispTotal = document.getElementById('rfq-disp-total');
+
+      if (previewImg) previewImg.src = currentSelectedProduct.image || 'assets/logo.png';
+      if (previewName) previewName.textContent = currentSelectedProduct.name;
+      if (previewSku) previewSku.textContent = `SKU: ${currentSelectedProduct.sku}`;
+      if (dispQty) dispQty.textContent = `${qty.toLocaleString()} units`;
+      if (dispRate) dispRate.textContent = currentSelectedProduct.displayPrice ? `${currentSelectedProduct.displayPrice} /bag` : 'Quote Only';
+      if (dispTotal) {
+        dispTotal.textContent = currentSelectedProduct.price !== null 
+          ? `$${subtotal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
+          : 'Quote on Request';
+      }
+    }
+
+    function handleFileSelect(e) {
+      const file = e.target.files[0];
+      const filenameEl = document.getElementById('rfq-selected-filename');
+      if (file && filenameEl) {
+        filenameEl.textContent = `Attached: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+        filenameEl.style.display = 'block';
+      }
+    }
+
+    function handleRfqSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('quote-rfq-form');
+      if (form) {
+        App.submitForm(form, 'Custom Wholesale RFQ', () => {
+          const card = document.getElementById('rfq-form-card');
+          if (card) {
+            const company = document.getElementById('rfq-company').value;
+            const email = document.getElementById('rfq-email').value;
+            const rfqId = `RFQ-2026-${Math.floor(100000 + Math.random() * 900000)}`;
+
+            card.innerHTML = `
+              <div style="text-align:center; padding:3rem 1.5rem;">
+                <div style="width:64px; height:64px; background:var(--primary-light); color:var(--primary); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2rem; margin:0 auto 1.25rem auto;">✓</div>
+                <span class="badge badge-dark" style="margin-bottom:1rem; padding:0.4rem 1rem;">RFQ Reference: ${rfqId}</span>
+                <h2 style="font-size:1.85rem; font-weight:800; margin-bottom:0.5rem; color:#000000;">Quote Request Submitted!</h2>
+                <p style="color:var(--text-muted); font-size:0.95rem; max-width:480px; margin:0 auto 1.5rem auto;">
+                  Thank you, <strong>${company}</strong>. Our wholesale estimating team will prepare a formal PDF quote and send it to <strong>${email}</strong> within 2 business hours.
+                </p>
+                <div style="display:flex; justify-content:center; gap:1rem;">
+                  <a href="catalog.html" class="btn btn-primary">Browse More Bags</a>
+                  <a href="index.html" class="btn btn-outline">Return to Home</a>
+                </div>
+              </div>
+            `;
+          }
+        });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initRfqPage();
+    });
+  </script>
+</body>
+</html>

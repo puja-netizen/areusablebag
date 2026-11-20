@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us &amp; Wholesale FAQs | A Reusable Bag</title>
+  <meta name="description" content="Contact A Reusable Bag customer service, track wholesale orders, review case pack minimums, or get answers to custom imprinting FAQs.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+</head>
+<body>
+
+  <!-- Shared Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main style="padding: 3rem 0 5rem 0;">
+    <div class="container">
+      
+      <div class="section-header text-center" style="max-width:760px; margin:0 auto 3.5rem auto;">
+        <span class="section-pill">Customer Support &amp; Knowledge Base</span>
+        <h1 class="section-title">We're Here to Help Your Team</h1>
+        <p class="section-desc">
+          Have questions regarding production timelines, vector artwork approvals, freight pallets, or custom bag dimensions? Reach out directly to our factory support desk.
+        </p>
+      </div>
+
+      <!-- Contact Directory Cards -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.75rem; margin-bottom:4rem;">
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:2rem; box-shadow:var(--shadow-sm);">
+          <div style="font-size:2rem; color:var(--primary); margin-bottom:0.75rem;">📞</div>
+          <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:0.35rem;">Toll-Free Phone</h3>
+          <p style="font-size:0.875rem; color:var(--text-muted); margin-bottom:1rem;">Direct line to our wholesale quoting specialists.</p>
+          <a href="tel:18005552247" style="font-size:1.25rem; font-weight:800; color:var(--primary);">(800) 555-BAGS</a>
+          <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">Mon - Fri: 8:00 AM - 6:00 PM EST</div>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:2rem; box-shadow:var(--shadow-sm);">
+          <div style="font-size:2rem; color:var(--primary); margin-bottom:0.75rem;">✉️</div>
+          <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:0.35rem;">Customer Care &amp; Art Desk</h3>
+          <p style="font-size:0.875rem; color:var(--text-muted); margin-bottom:1rem;">Submit logos, vector proofs, or order inquiries.</p>
+          <a href="mailto:sales@areusablebag.com" style="font-size:1.1rem; font-weight:800; color:var(--primary);">sales@areusablebag.com</a>
+          <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">Typical response under 2 hours</div>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:2rem; box-shadow:var(--shadow-sm);">
+          <div style="font-size:2rem; color:var(--primary); margin-bottom:0.75rem;">🏭</div>
+          <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:0.35rem;">Fulfillment &amp; Warehouse</h3>
+          <p style="font-size:0.875rem; color:var(--text-muted); margin-bottom:1rem;">Domestic warehouse &amp; rapid freight staging.</p>
+          <div style="font-size:0.9375rem; font-weight:700; color:var(--text-main);">National Distribution Hub</div>
+          <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">Dock appointments required for LTL pickups</div>
+        </div>
+      </div>
+
+      <!-- Split Layout: Contact Form & FAQ Accordion -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:3.5rem; align-items:start;">
+        
+        <!-- Left: Inquiry Form -->
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:2.5rem; box-shadow:var(--shadow-md);" id="contact-form-container">
+          <h2 style="font-size:1.5rem; font-weight:800; margin-bottom:0.5rem;">Send an Inquiry</h2>
+          <p style="font-size:0.875rem; color:var(--text-muted); margin-bottom:1.5rem;">
+            Whether you need custom Pantone dyeing, split freight shipments, or quote assistance, drop us a message.
+          </p>
+
+          <form onsubmit="handleContactSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Your Name *</label>
+                <input type="text" id="ct-name" class="form-input" required placeholder="John Smith">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Company / Supermarket *</label>
+                <input type="text" id="ct-company" class="form-input" required placeholder="Acme Grocery Co.">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Email Address *</label>
+                <input type="email" id="ct-email" class="form-input" required placeholder="john@acmegrocery.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" id="ct-phone" class="form-input" placeholder="(555) 000-0000">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Inquiry Category *</label>
+              <select id="ct-category" class="form-select" required>
+                <option value="quote">Wholesale Order Quotation</option>
+                <option value="samples">Sample Packet Tracking</option>
+                <option value="artwork">Prepress &amp; Artwork Proofing</option>
+                <option value="custom">Custom Dimensions / Sourcing (25,000+ units)</option>
+                <option value="general">General Support</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Message Details *</label>
+              <textarea id="ct-message" class="form-textarea" rows="4" required placeholder="Tell us how we can assist your project..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%; font-size:1rem; padding:0.85rem;">
+              Send Inquiry Message →
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: FAQ Accordion -->
+        <div>
+          <span class="section-pill">Frequently Asked Questions</span>
+          <h2 style="font-size:1.75rem; font-weight:800; margin-bottom:1rem;">Wholesale Ordering FAQs</h2>
+          <p style="font-size:0.875rem; color:var(--text-muted); margin-bottom:1.5rem;">
+            Quick answers to our most common buyer and distributor questions.
+          </p>
+
+          <div class="faq-list">
+            <!-- FAQ 1 -->
+            <div class="faq-item open">
+              <button class="faq-question" type="button">
+                <span>What is your standard production turnaround time?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                Standard production time is <strong>5 business days</strong> for 1-color and 2-color screen-printed non-woven bags after your virtual artwork proof has been officially approved. Full-color "Color Evolution" digital transfers take <strong>10 business days</strong>. Rush 3-day production is available on select stock colors.
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>What is the Minimum Order Quantity (MOQ)?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                Our standard MOQ is <strong>100 bags</strong> for grocery totes and 50 bags for heavy canvas totes or insulated cooler bags. Bags are shipped in master case packs of 50 to 100 bags to prevent transit damage.
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Are screen or digital setup fees waived?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                Yes! We offer <strong>FREE SETUP ($0)</strong> on wholesale orders of 500 units or more. For smaller runs (100–250 units), a nominal standard screen setup fee of $45 per color applies.
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>How can my company request free physical samples?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                We provide up to <strong>2 free physical samples</strong> with our complete polypropylene fabric color swatch ring to qualified businesses, supermarkets, schools, and organizations. Simply visit our <a href="free-sample.html" style="color:var(--primary); font-weight:700;">Free Sample Kit</a> page to order.
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>What file format should I submit for printing?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                We prefer vector artwork in Adobe Illustrator (.AI), .EPS, Vector .PDF, or .SVG format with all fonts converted to outlines. If submitting raster artwork (.PNG / .TIFF), images must be at least 300 DPI at 100% final imprint size.
+              </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Can we mix bag colors in our order?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                Yes, provided each selected color is ordered in full case pack increments (typically 100 bags per case) and uses the same imprint ink color and artwork without screen changes.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+    <!-- Shared Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="js/layout.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Accordion toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(q => {
+        q.addEventListener('click', () => {
+          const item = q.parentElement;
+          item.classList.toggle('open');
+        });
+      });
+    });
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('ct-name').value;
+      const email = document.getElementById('ct-email').value;
+      const container = document.getElementById('contact-form-container');
+
+      if (container) {
+        container.innerHTML = `
+          <div style="text-align:center; padding:3rem 1rem;">
+            <div style="width:64px; height:64px; background:var(--primary-light); color:var(--primary); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2rem; margin:0 auto 1.5rem auto;">✓</div>
+            <h3 style="font-size:1.75rem; font-weight:800; margin-bottom:0.75rem;">Message Received!</h3>
+            <p style="color:var(--text-muted); font-size:0.9375rem; max-width:440px; margin:0 auto 1.5rem auto; line-height:1.6;">
+              Thank you, <strong>${name}</strong>. Your inquiry has been routed to our customer support desk. A representative will follow up at <strong>${email}</strong> within 2 hours.
+            </p>
+            <button class="btn btn-primary btn-sm" onclick="location.reload()">Send Another Message</button>
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

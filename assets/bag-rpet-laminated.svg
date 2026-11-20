@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 440" width="400" height="440" fill="none">
+  <defs>
+    <filter id="shadowr" x="-8%" y="-8%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <linearGradient id="rpetGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+  </defs>
+  <g filter="url(#shadowr)">
+    <!-- Webbing handles -->
+    <path d="M135 140 C135 45 265 45 265 140" stroke="#0f172a" stroke-width="16" stroke-linecap="round" fill="none"/>
+    <path d="M135 140 V400" stroke="#0f172a" stroke-width="12"/>
+    <path d="M265 140 V400" stroke="#0f172a" stroke-width="12"/>
+    <!-- Laminated Gloss Body -->
+    <path d="M85 140 L315 140 L300 405 L100 405 Z" fill="url(#rpetGrad)"/>
+    <!-- Gloss Sheen -->
+    <path d="M95 140 L200 140 L160 405 L100 405 Z" fill="#ffffff" fill-opacity="0.15"/>
+    <!-- 100% Recycled Bottles Badge -->
+    <circle cx="200" cy="265" r="38" fill="#ffffff"/>
+    <g transform="translate(182, 245)" stroke="#0d9488" stroke-width="3" fill="none">
+      <path d="M18 5 L22 12 H14 Z" fill="#0d9488"/>
+      <path d="M18 10 C28 10 32 18 32 24 C32 30 26 34 18 34 C10 34 4 28 4 22"/>
+    </g>
+    <text x="200" y="288" font-family="system-ui, sans-serif" font-size="8.5" font-weight="800" fill="#0f172a" text-anchor="middle">100% RPET</text>
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 440" width="400" height="440" fill="none">
+  <defs>
+    <filter id="shadow" x="-8%" y="-8%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <linearGradient id="foldGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+  <g filter="url(#shadow)">
+    <!-- Loop -->
+    <path d="M200 130 C200 115 208 108 200 105 C192 108 200 115 200 130" stroke="#15803d" stroke-width="5" stroke-linecap="round"/>
+    <!-- Handles -->
+    <path d="M140 140 C140 40 260 40 260 140" stroke="#15803d" stroke-width="16" stroke-linecap="round" fill="none" class="bag-handle"/>
+    <path d="M140 140 V220" stroke="#15803d" stroke-width="14" stroke-linecap="round" class="bag-handle"/>
+    <path d="M260 140 V220" stroke="#15803d" stroke-width="14" stroke-linecap="round" class="bag-handle"/>
+    <!-- Bag Body Front -->
+    <path d="M90 140 L310 140 L295 400 L105 400 Z" fill="#22c55e" class="bag-body"/>
+    <!-- Left Gusset -->
+    <path d="M90 140 L135 140 L145 400 L105 400 Z" fill="#15803d" fill-opacity="0.35" class="bag-gusset"/>
+    <!-- Hem Opening -->
+    <path d="M85 140 C85 137 90 134 100 134 H300 C310 134 315 137 315 140 L310 146 H90 Z" fill="#166534" fill-opacity="0.4"/>
+    <!-- Stitched lines -->
+    <path d="M96 148 L109 392" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4 3" stroke-opacity="0.5"/>
+    <path d="M304 148 L291 392" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4 3" stroke-opacity="0.5"/>
+    <!-- Poly board base indication -->
+    <path d="M105 400 L295 400 L285 410 L115 410 Z" fill="#0f172a" fill-opacity="0.2"/>
+    <!-- Print Area Frame -->
+    <rect x="150" y="210" width="100" height="110" rx="4" fill="#ffffff" fill-opacity="0.1" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4 4" stroke-opacity="0.4"/>
+    <!-- Imprint Mockup Graphic -->
+    <g transform="translate(165, 235)">
+      <circle cx="35" cy="25" r="20" fill="#ffffff" fill-opacity="0.9"/>
+      <path d="M25 25 C25 15 45 15 45 25 C45 35 25 35 25 25 Z" fill="#15803d"/>
+      <text x="35" y="58" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1">YOUR LOGO</text>
+    </g>
+  </g>
+</svg>

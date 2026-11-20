@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wholesale Reusable Bags Catalog | A Reusable Bag</title>
+  <meta name="description" content="Explore our complete line of custom printed non-woven grocery bags, recyclable shopping totes, insulated coolers, and wine carriers with factory wholesale pricing.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <style>
+    .catalog-controls {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .catalog-search-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+    .cat-filter-btn {
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-main);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .cat-filter-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .cat-filter-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Page Header Banner -->
+    <section style="background:#000000; color:#ffffff; padding:3.5rem 0 3rem 0; border-bottom:2px solid var(--primary);">
+      <div class="container text-center">
+        <span class="section-pill">Wholesale Inventory</span>
+        <h1 style="font-size:2.5rem; font-weight:800; letter-spacing:-0.5px; margin-bottom:0.75rem;">Wholesale Reusable Bags Catalog</h1>
+        <p style="font-size:1.0625rem; color:#d4d4d4; max-width:640px; margin:0 auto;">
+          Browse all authentic factory-direct bags. Customize with spot screen printing or full-color Color Evolution digital heat transfer.
+        </p>
+      </div>
+    </section>
+
+    <!-- Catalog Interactive Filters & Grid -->
+    <section class="section" style="padding:3rem 0 5rem 0;">
+      <div class="container">
+        
+        <!-- Filter Bar -->
+        <div class="catalog-controls">
+          
+          <!-- Search & Sort Row -->
+          <div class="catalog-search-row">
+            <!-- Search -->
+            <div style="flex-grow:1; min-width:260px; position:relative;">
+              <input type="text" id="catalog-search-input" class="form-input" placeholder="🔍 Search by bag name, SKU, or keyword..." style="padding-right:2.5rem;">
+              <button id="clear-search-btn" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); font-size:1.1rem; color:var(--text-muted); display:none;" title="Clear search">&times;</button>
+            </div>
+
+            <!-- Sort By -->
+            <div style="min-width:200px;">
+              <select id="catalog-sort-select" class="form-select">
+                <option value="featured">Sort: Catalog Order</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="name-asc">Name: A to Z</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Dynamic Category Filter Pills from CSV -->
+          <div>
+            <div style="font-size:0.8125rem; font-weight:700; color:var(--text-muted); margin-bottom:0.5rem;">
+              Filter by Category:
+            </div>
+            <div id="catalog-category-filters" style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+              <!-- Dynamically populated from CSV categories -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Counter & Trust -->
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:0.5rem;">
+          <div id="catalog-results-count" style="font-size:0.95rem; font-weight:700; color:#000000;">
+            Showing all products...
+          </div>
+          <div style="font-size:0.8125rem; color:var(--primary); font-weight:600;">
+            ✓ Real-time wholesale prices &amp; free physical sample kits available
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid" id="catalog-product-grid">
+          <!-- Dynamically populated by Catalog.render() -->
+        </div>
+
+        <!-- Pagination / Load More Button -->
+        <div id="catalog-pagination-wrap" style="text-align:center; margin-top:3rem;">
+          <!-- Dynamically populated by Catalog.render() -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="catalog-empty-state" style="display:none; text-align:center; padding:4rem 1.5rem; background:var(--surface); border:1px dashed var(--border); border-radius:var(--radius-lg); margin-top:1rem;">
+          <div style="font-size:3rem; margin-bottom:0.75rem;">🔍</div>
+          <h3 style="font-size:1.5rem; font-weight:700; margin-bottom:0.5rem;">No Matching Bags Found</h3>
+          <p style="color:var(--text-muted); max-width:440px; margin:0 auto 1.5rem auto;">
+            We couldn't find any bags matching your active search filters. Try adjusting your query or resetting category options.
+          </p>
+          <button class="btn btn-primary btn-sm" onclick="location.href='catalog.html'">Reset All Filters</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Custom Sourcing Callout -->
+    <section class="section section-alt" style="border-top:1px solid var(--border);">
+      <div class="container text-center" style="max-width:800px;">
+        <span class="section-pill">Custom Manufacturing</span>
+        <h2 class="section-title">Need Custom Sizing, Full Gusset Printing, or 25,000+ Units?</h2>
+        <p class="section-desc" style="margin-bottom:2rem;">
+          We operate direct overseas and domestic fabrication lines capable of custom pantone-matched fabric dying, specialized pocket additions, custom handle lengths, and custom barcoding.
+        </p>
+        <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+          <a href="quote.html" class="btn btn-primary btn-lg">Submit Custom Project Specifications →</a>
+          <a href="contact.html" class="btn btn-outline btn-lg">Contact Sourcing Team</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Free Sample Kit Drawer Backdrop & Modal -->
+  <div class="modal-backdrop" id="sample-modal-backdrop">
+    <div class="modal-box" style="max-width:540px;">
+      <div class="modal-header">
+        <h3 style="font-size:1.25rem; font-weight:800;">Your Free Sample Kit</h3>
+        <button class="modal-close" id="close-sample-modal-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="sample-modal-list" style="margin-bottom:1.5rem;"></div>
+        <form id="sample-request-form" onsubmit="App.handleSampleFormSubmit(event)">
+          <div class="form-group">
+            <label class="form-label" for="sample-company">Company / Organization Name *</label>
+            <input type="text" id="sample-company" name="company" class="form-input" required placeholder="e.g. Acme Supermarkets">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="sample-name">Contact Name *</label>
+            <input type="text" id="sample-name" name="name" class="form-input" required placeholder="Jane Doe">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="sample-email">Business Email *</label>
+            <input type="email" id="sample-email" name="email" class="form-input" required placeholder="jane@company.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="sample-address">Commercial Shipping Address *</label>
+            <textarea id="sample-address" name="address" class="form-textarea" rows="2" required placeholder="Street address, Suite, City, State, ZIP"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; font-weight:700;">Submit Free Sample Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Standard Footer -->
+    <!-- Shared Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <script src="js/layout.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/catalog.js"></script>
+</body>
+</html>
